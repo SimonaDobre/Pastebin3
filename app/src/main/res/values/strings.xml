@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Pastebin3</string>
+
+    <string-array name="Syntax_Hightlightning">
+        <item>None</item>
+        <item>C++</item>
+        <item>Java</item>
+        <item>C#</item>
+        <item>CSS</item>
+        <item>JavaScript</item>
+        <item>HTML</item>
+    </string-array>
+
+    <string-array name="expiration">
+        <item>None</item>
+        <item>1 minut</item>
+        <item>10 minute</item>
+        <item>1 ora</item>
+        <item>1 zi</item>
+        <item>1 sapt</item>
+        <item>2 sapt</item>
+        <item>1 luna</item>
+        <item>6 luni</item>
+        <item>1 an</item>
+    </string-array>
+
+    <string-array name="exposure">
+        <item>public</item>
+        <item>unlisted</item>
+        <item>private</item>
+    </string-array>
+
+    <string-array name="folder">
+        <item>doar pt pro</item>
+
+    </string-array>
+
+
+</resources>

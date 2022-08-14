@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "634355714053",
+    "project_id": "pastebin3-eb8b2",
+    "storage_bucket": "pastebin3-eb8b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634355714053:android:3f39f5f7391ce881ef746c",
+        "android_client_info": {
+          "package_name": "com.simona.pastebin3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "634355714053-se041ctkrtijlc4d56b50c42kj9ialsu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMlWMHCf8fnYrqbadX7kjNY9ul1LCweTg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "634355714053-se041ctkrtijlc4d56b50c42kj9ialsu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

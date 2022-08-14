@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddActivity">
+
+    <TextView
+        android:id="@+id/loggedUserTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="Logged user:">
+
+    </TextView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/inputTextHeight">
+
+                <EditText
+                    android:id="@+id/inputContentED"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:hint="Adauga textul "
+                    android:inputType="textPersonName" />
+
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/syntaxTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/scrollView"
+                android:layout_margin="6dp"
+                android:layout_marginLeft="4dp"
+                android:paddingTop="6dp"
+                android:text="Syntax"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/syntaxSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/scrollView"
+                android:layout_alignLeft="@id/exposureSpinner"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_toRightOf="@id/syntaxTV"
+                android:entries="@array/Syntax_Hightlightning" />
+
+            <TextView
+                android:id="@+id/expirationTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/syntaxTV"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="6dp"
+                android:paddingTop="6dp"
+                android:text="Expiration"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/expirationSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/syntaxSpinner"
+                android:layout_alignLeft="@id/exposureSpinner"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_toRightOf="@id/expirationTV"
+                android:entries="@array/expiration" />
+
+
+            <TextView
+                android:id="@+id/exposureTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/expirationTV"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="6dp"
+                android:paddingTop="6dp"
+                android:text="Exposure"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/exposureSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/expirationSpinner"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="9dp"
+                android:layout_toRightOf="@id/exposureTV"
+                android:entries="@array/exposure" />
+
+
+            <TextView
+                android:id="@+id/folderTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/exposureTV"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="6dp"
+                android:paddingTop="6dp"
+                android:text="Folder"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/folderSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/exposureSpinner"
+                android:layout_alignLeft="@id/exposureSpinner"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="9dp"
+                android:layout_toRightOf="@id/folderTV"
+                android:entries="@array/folder" />
+
+
+            <TextView
+                android:id="@+id/nameTitleTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/folderTV"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="6dp"
+                android:paddingTop="6dp"
+                android:text="Title"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/inputTitleED"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/folderSpinner"
+                android:layout_alignLeft="@id/exposureSpinner"
+                android:layout_toRightOf="@id/nameTitleTV"
+                android:ems="10"
+                android:hint="Adauga titlu / nume"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/createBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nameTitleTV"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="6dp"
+                android:text="post"
+                app:backgroundTint="#8BC34A" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/publicPastesBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/createBtn"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_toRightOf="@id/myPasesBtn"
+            android:layout_weight="1"
+            android:text="PUBLIC PASTES"
+            app:backgroundTint="#00BCD4" />
+
+        <Button
+            android:id="@+id/myPasesBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/createBtn"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_weight="1"
+            android:text="MY PASTES"
+            app:backgroundTint="#4CAF50" />
+    </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/postsRV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/myPasesBtn">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+
+
+</LinearLayout>
