@@ -21,9 +21,11 @@
 
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/jack_russel_run" />
+                android:layout_width="@dimen/imageMargin"
+                android:layout_height="@dimen/imageMargin"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/bottomMargin"
+                app:srcCompat="@drawable/dog_log" />
 
 
             <ProgressBar
@@ -56,7 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
-                android:hint="password minimum 6 char"
+                android:hint="password, min 6 characters"
                 android:inputType="textPassword"
                 android:paddingBottom="15dp" />
 

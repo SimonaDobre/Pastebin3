@@ -11,7 +11,6 @@ public class Paste {
     private String userName;
     private String userID;
 
-
     public Paste() {
     }
 

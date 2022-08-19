@@ -3,5 +3,7 @@
 
     <dimen name="windowHeight">300dp</dimen>
     <dimen name="inputTextHeight">50dp</dimen>
-
+    <dimen name="imageMargin">250dp</dimen>
+    <dimen name="bottomMargin">20dp</dimen>
+    
 </resources>

@@ -37,9 +37,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initViews();
-
-        // CUM FAC LOG OUT ??
-
     }
 
     void loginExistingUser() {
@@ -82,11 +79,11 @@ public class MainActivity extends AppCompatActivity {
                     toAddActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     toAddActivity.putExtra(LOGGED_USERNAME, userName);
                     toAddActivity.putExtra(LOGGED_USERID, loggedUID);
-                    toAddActivity.putExtra("IntentFrom", "MainActiv");
+                    toAddActivity.putExtra("IntentFrom", "MainActivity");
                     startActivity(toAddActivity);
                 } else {
                     inputEmailED.requestFocus();
-                    Toast.makeText(MainActivity.this, "mesaj: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Error message: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
                 pb.setVisibility(View.GONE);
             }
@@ -101,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
         inputEmailED = findViewById(R.id.emailLoginED);
         inputPassED = findViewById(R.id.passLoginED);
-        inputPassED.setText("123456");
+//        inputPassED.setText("123456");
 
         loginBtn = findViewById(R.id.loginBtn);
         loginBtn.setOnClickListener(view -> {
@@ -118,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(toSignUpActivity);
             }
         });
+
 
     }
 }

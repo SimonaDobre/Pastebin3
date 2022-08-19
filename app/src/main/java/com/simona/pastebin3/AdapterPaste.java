@@ -15,14 +15,12 @@ public class AdapterPaste extends RecyclerView.Adapter<AdapterPaste.ViewHolderPa
 
     Context context;
     ArrayList<Paste> postsArray;
-//    String loggedUser;
     ManagePastesInterface managePastesInterface;
 
     public AdapterPaste(Context context, ArrayList<Paste> postsArray,
                         ManagePastesInterface managePastesInterface) {
         this.context = context;
         this.postsArray = postsArray;
-//        this.loggedUser = loggedUser;
         this.managePastesInterface = managePastesInterface;
     }
 

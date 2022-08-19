@@ -39,7 +39,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
-                    android:hint="Adauga textul "
+                    android:hint="Add content"
                     android:inputType="textPersonName" />
 
             </ScrollView>
@@ -166,7 +166,7 @@
                 android:layout_alignLeft="@id/exposureSpinner"
                 android:layout_toRightOf="@id/nameTitleTV"
                 android:ems="10"
-                android:hint="Adauga titlu / nume"
+                android:hint="Add title or name"
                 android:inputType="textPersonName" />
 
             <Button

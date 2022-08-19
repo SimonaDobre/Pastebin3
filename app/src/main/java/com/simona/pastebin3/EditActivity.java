@@ -33,7 +33,6 @@ public class EditActivity extends AppCompatActivity {
 
     }
 
-
     void initViews() {
 
         Intent receivedIntent = getIntent();

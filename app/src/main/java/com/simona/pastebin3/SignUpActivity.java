@@ -28,6 +28,9 @@ public class SignUpActivity extends AppCompatActivity {
     private FirebaseAuth myAuth;
     ProgressBar progressBar;
 
+    public static final String REGISTERRED_USER_NAME = "run";
+    public static final String REGISTERED_USER_ID = "rui";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,9 +74,16 @@ public class SignUpActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(SignUpActivity.this, "User register succesful!", Toast.LENGTH_SHORT).show();
+                            Intent toAddActivity = new Intent(SignUpActivity.this, AddActivity.class);
+                            toAddActivity.putExtra(REGISTERRED_USER_NAME, userName);
+                            String newCreatedID = myAuth.getUid();
+                            toAddActivity.putExtra(REGISTERED_USER_ID, newCreatedID);
+                            toAddActivity.putExtra("IntentFrom", "SignUpActivity");
+                            startActivity(toAddActivity);
                         } else {
                             emailSignUpED.requestFocus();
-                            Toast.makeText(SignUpActivity.this, "mesaj: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpActivity.this, "mesaj: " +
+                                    task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                         progressBar.setVisibility(View.GONE);
                     }
@@ -82,7 +92,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     void hideKb() {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(emailSignUpED.getWindowToken(),0);
+        imm.hideSoftInputFromWindow(emailSignUpED.getWindowToken(), 0);
     }
 
     void initViews() {

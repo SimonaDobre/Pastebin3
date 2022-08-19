@@ -65,9 +65,7 @@ public class AddActivity extends AppCompatActivity implements ManagePastesInterf
         setContentView(R.layout.activity_add);
 
         initViews();
-
         swipeToDelete();
-
     }
 
 
@@ -166,20 +164,22 @@ public class AddActivity extends AppCompatActivity implements ManagePastesInterf
     void initViews() {
         Intent receivedIntent = getIntent();
         String previousActivity = receivedIntent.getStringExtra("IntentFrom");
-        if (previousActivity.equals("MainActiv")) {
+        if (previousActivity.equals("MainActivity")) {
             loggedUser = receivedIntent.getStringExtra(MainActivity.LOGGED_USERNAME);
             loggedUserID = receivedIntent.getStringExtra(MainActivity.LOGGED_USERID);
         } else if (previousActivity.equals("EditActiv")) {
             loggedUser = receivedIntent.getStringExtra(EditActivity.USER_NAME);
             loggedUserID = receivedIntent.getStringExtra(EditActivity.USER_ID);
+        } else if (previousActivity.equals("SignUpActivity")) {
+            loggedUser = receivedIntent.getStringExtra(SignUpActivity.REGISTERRED_USER_NAME);
+            loggedUserID = receivedIntent.getStringExtra(SignUpActivity.REGISTERED_USER_ID);
         }
-
         loggedUserTV = findViewById(R.id.loggedUserTV);
-        loggedUserTV.setText("User logged " + loggedUser);
+        loggedUserTV.setText("Logged user: " + loggedUser);
 
         rv = findViewById(R.id.postsRV);
         postssArray = new ArrayList<>();
-        // to display LIFO
+        // for LIFO display order
         Collections.reverse(postssArray);
         myAdapter = new AdapterPaste(this, postssArray, this);
         rv.setLayoutManager(new LinearLayoutManager(this));
@@ -289,36 +289,36 @@ public class AddActivity extends AppCompatActivity implements ManagePastesInterf
         int minutes = 0;
         String expSelectedItem = expirationSpinner.getSelectedItem().toString();
         switch (expSelectedItem) {
-            case "1 minut":
+            case "1 minute":
                 minutes = 1;
                 break;
-            case "10 minute":
+            case "10 minutes":
                 minutes = 10;
                 break;
-            case "1 ora":
+            case "1 hour":
                 minutes = 60;
                 break;
-            case "1 zi":
+            case "1 day":
                 numberOfDays = 1;
                 break;
-            case "1 sapt":
+            case "1 week":
                 numberOfDays = 7;
                 break;
-            case "2 sapt":
+            case "2 weeks":
                 numberOfDays = 14;
                 break;
-            case "1 luna":
+            case "1 month":
                 numberOfDays = 30;
                 break;
-            case "6 luni":
+            case "6 months":
                 numberOfDays = 183;
                 break;
-            case "1 an":
+            case "1 year":
                 numberOfDays = 365;
                 break;
         }
         String expirDate = "";
-        if (!expSelectedItem.equals("None")){
+        if (!expSelectedItem.equals("None")) {
             Calendar cal = Calendar.getInstance();
             cal.add(Calendar.DATE, numberOfDays);
             cal.add(Calendar.MINUTE, minutes);
@@ -329,7 +329,6 @@ public class AddActivity extends AppCompatActivity implements ManagePastesInterf
         }
         return expirDate;
     }
-
 
     void hideKb() {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);

@@ -26,11 +26,14 @@
 
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/imageMargin"
+            android:layout_height="@dimen/imageMargin"
             android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/bottomMargin"
+            android:layout_marginBottom="@dimen/bottomMargin"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/jack_russel_mingie" />
+            app:srcCompat="@drawable/dog_acc" />
 
         <ProgressBar
             android:id="@+id/signUpPB"
@@ -45,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="CREAZA UN CONT NOU"
+            android:text="Create a new account"
             android:textSize="24sp" />
 
         <EditText
@@ -62,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
-            android:hint="password"
+            android:hint="password, min 6 characters"
             android:inputType="textPassword"
             android:paddingBottom="15dp" />
 
